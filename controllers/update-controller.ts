@@ -5,16 +5,16 @@ import UserService from '../services/UserServices';
 let update = async (req: Request, res: Response) => {  
   try {
     const {
-        email,
-        nombres,
-        apellidos,
-        telefono,
-        password
+      nombre,
+      correo,
+      contraseña,
+      direccion,
+      telefono,
       } = req.body;
     const { id } = req.params; // el id se pasa por parámetros en la URL
 
     // Llamar al servicio para actualizar el usuario
-    const updatedUser = await UserService.update(new User(email, nombres, apellidos, telefono, password), parseInt(id));
+    const updatedUser = await UserService.update(new User(nombre, correo, contraseña, direccion, telefono), parseInt(id));
     
     return res.status(200).json({ status: 'update ok' });
   } catch (error: any) {    
