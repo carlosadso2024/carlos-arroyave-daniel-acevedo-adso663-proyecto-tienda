@@ -1,63 +1,63 @@
 class User {
     
-    private _email: string;
-    private _nombres: string;
-    private _apellidos: string;
-    private _telefono: string;
-    private _password: string
+    private _nombre: string;
+    private _correo: string;
+    private _contraseña: string;
+    private _direccion: string;
+    private _telefono: string
 
     constructor(
-        email: string, nombres: string,
-        apellidos: string, telefono: string,
-        password: string
+        nombre: string, correo: string,
+        contraseña: string, direccion: string,
+        telefono: string
     ) {
-        this._email = email;
-        this._nombres = nombres;
-        this._apellidos = apellidos;
-        this._telefono = telefono;
-        this._password = password
+        this._nombre = nombre;
+        this._correo = correo;
+        this._contraseña = contraseña;
+        this._direccion = direccion;
+        this._telefono = telefono
     }
 
     // Getters
-    get email(): string {
-        return this._email;
+    get nombre(): string {
+        return this._nombre;
     }
 
-    get nombres(): string {
-        return this._nombres;
+    get correo(): string {
+        return this._correo;
     }
 
-    get apellidos(): string {
-        return this._apellidos;
+    get contraseña(): string {
+        return this._contraseña;
+    }
+
+    get direccion(): string {
+        return this._direccion;
     }
 
     get telefono(): string {
         return this._telefono;
     }
 
-    get password(): string {
-        return this._password;
-    }
-
     // Setters
-    set email(email: string) {
-        this._email = email;
+    set nombre(nombre: string) {
+        this._nombre = nombre;
     }
 
-    set nombres(nombres: string) {
-        this._nombres = nombres;
+    set correo(correo: string) {
+        this._correo = correo;
     }
 
-    set apellidos(apellidos: string) {
-        this._apellidos = apellidos;
+    set contraseña(contraseña: string) {
+        this._contraseña = contraseña;
+    }
+
+    set direccion(direccion: string) {
+        this._direccion = direccion;
     }
 
     set telefono(telefono: string) {
         this._telefono = telefono;
-    }
-
-    set password(password: string) {
-        this._password = password;
     }
 }
 

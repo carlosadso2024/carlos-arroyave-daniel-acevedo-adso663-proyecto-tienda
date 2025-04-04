@@ -7,7 +7,7 @@ import Auth from '../Dto/AuthDto';
 class UserService {
     
     static async register(user: User) {
-        user.password = await generateHash(user.password);
+        user.contraseña = await generateHash(user.contraseña);
         return await UserRepository.add(user);
     }
 
@@ -16,7 +16,7 @@ class UserService {
     }
 
     static async update(user: User, id: number) {
-        user.password = await generateHash(user.password);
+        user.contraseña = await generateHash(user.contraseña);
         return await UserRepository.update(user, id);
     }
 
