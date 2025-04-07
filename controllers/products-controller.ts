@@ -15,7 +15,7 @@ let products = async (req: Request, res: Response) => {
     } = req.body;
     const registerProduct = await ProductService.register(new Products(nombre, descripcion, precio, stock, categoria))
     return res.status(201).json(
-      { status: 'register ok'}
+      { status: 'register product ok'}
     );
   } catch (error: any) {
     console.error("Error en la API:", error);
