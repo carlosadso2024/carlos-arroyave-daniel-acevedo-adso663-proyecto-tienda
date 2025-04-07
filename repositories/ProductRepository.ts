@@ -11,7 +11,14 @@ class ProductRepository {
         return db.execute(sql, values);
     }
 
-   
+    static async get() {
+        // Consulta para obtener todos los productos
+        const sql = 'SELECT * FROM productos';
+        
+        // Ejecutar la consulta y devolver los resultados
+        return db.execute(sql);
+    }
+    
     static async update(product: Products, id: number){
       const checkSql = 'SELECT id FROM products WHERE id = ?';
       const checkResult: any = await db.execute(checkSql, [id]);
