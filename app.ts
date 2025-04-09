@@ -8,6 +8,7 @@ import update from './routes/update';
 import deleteRoute from './routes/delete';
 import products from './routes/products';
 import getProducts from './routes/getProducts';
+import productsId from "./routes/productsId";
 import cart from './routes/cart';
 import getCart from './routes/getCart';
 
@@ -23,9 +24,11 @@ app.use('/profile', profile);
 app.use('/update', update);
 app.use('/delete', deleteRoute);
 app.use('/products', products)
+app.use('/productsId', productsId);
 app.use('/getProducts', getProducts)
 app.use('/cart', cart)
 app.use('/getCart', getCart)
+
 
 const PORT = process.env.PORT || 10101;
 
