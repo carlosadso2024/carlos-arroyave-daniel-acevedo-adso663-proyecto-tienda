@@ -8,6 +8,7 @@ import update from './routes/update';
 import deleteRoute from './routes/delete';
 import products from './routes/products';
 import getProducts from './routes/getProducts';
+import productsId from "./controllers/productsId";
 
 import dotenv from "dotenv";
 
@@ -21,7 +22,8 @@ app.use('/profile', profile);
 app.use('/update', update);
 app.use('/delete', deleteRoute);
 app.use('/products', products)
-app.use('/getProducts', getProducts)
+app.use('/getProducts', getProducts);
+app.use('/productsId', productsId);
 
 const PORT = process.env.PORT || 10101;
 
