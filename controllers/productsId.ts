@@ -4,8 +4,8 @@ import ProductRepository from "../repositories/ProductRepository";
 let productsId = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const result = await ProductRepository.getById(Number(id)) as any;
-    const product = result[0][0];
+    const result = await ProductRepository.getById(parseInt(id)) ;
+    const product = result[0];
 
     if (!product) {
       return res.status(404).json({ mensaje: "Producto no encontrado" });
