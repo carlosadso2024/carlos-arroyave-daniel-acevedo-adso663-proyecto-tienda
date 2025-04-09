@@ -6,8 +6,8 @@ class CartService {
         return await CartRepository.addToCart(cart);
     }
 
-    static async get() {
-        return await CartRepository.get();
+    static async get(userId: number) {
+        return await CartRepository.get(userId);
     }
 }
 
