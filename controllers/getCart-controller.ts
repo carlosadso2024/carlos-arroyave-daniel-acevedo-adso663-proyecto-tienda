@@ -2,14 +2,19 @@ import { Request, Response } from "express";
 import CartRepository from "../repositories/CartRepository";
 
 let getCart = async (req: Request, res: Response) => {
-  try {    
-    // Llamar al método get del repositorio para obtener todos los productos
-    const cart = await CartRepository.get();
+  try {
+    // Usamos el userId que viene del middleware verifyToken
+    const userId = req.body.id;
+
+    // Llamar al método get del repositorio pasando el userId para obtener los productos del carrito del usuario
+    const cart = await CartRepository.get(userId);
+
 
     // Devolver los productos en la respuesta
     return res.status(200).json({
-      status: 'Get cart OK',
-      cart: cart[0] // Los resultados suelen estar en la primera posición del array
+      status: 'Get cart OK', 
+      id: userId,
+      cart: cart 
     });
   } catch (error: any) {
     // Manejar errores y devolver un mensaje de error
