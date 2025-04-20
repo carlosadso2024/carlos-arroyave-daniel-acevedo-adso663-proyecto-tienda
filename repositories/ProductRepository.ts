@@ -20,7 +20,7 @@ class ProductRepository {
     }
     // Obtener metodo por su Id
     static async getById(id: number) {
-        const sql = 'SELECT * FROM productos WHERE id = ?';
+        const sql = 'SELECT * FROM productos WHERE id_prod = ?';
         const values = [id];
         return db.execute(sql, values);
     }
