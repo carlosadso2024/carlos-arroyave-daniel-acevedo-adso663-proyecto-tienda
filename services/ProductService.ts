@@ -10,7 +10,7 @@ class ProductService {
         return await ProductRepository.add(product);
     }
 
-    static async get(product: Products) {
+    static async get() {
         return await ProductRepository.get();
     }
 

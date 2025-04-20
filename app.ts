@@ -7,11 +7,12 @@ import profile from './routes/profile';
 import update from './routes/update';
 import deleteRoute from './routes/delete';
 import products from './routes/products';
-import productsId from "./routes/productsId";
 import cart from './routes/cart';
+import order from './routes/order';
 
 
 import dotenv from "dotenv";
+
 
 dotenv.config();
 
@@ -23,8 +24,8 @@ app.use('/profile', profile);
 app.use('/update', update);
 app.use('/delete', deleteRoute);
 app.use('/products', products)
-app.use('/productsId', productsId);
 app.use('/cart', cart)
+app.use('/order', order)
 
 
 
