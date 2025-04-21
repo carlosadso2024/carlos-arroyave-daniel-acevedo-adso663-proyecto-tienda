@@ -35,6 +35,16 @@ class OrderRepository {
       [usuario_id]
     );
   }
+  
+  static async get(userId: number) {
+    const sql = 'SELECT * FROM pedidos WHERE usuario_id = ?';
+    const [order] = await db.execute(sql, [userId]);  // Pasamos el userId como parámetro
+    return order;
+  }
+  
+
 }
+
+
 
 export default OrderRepository;
