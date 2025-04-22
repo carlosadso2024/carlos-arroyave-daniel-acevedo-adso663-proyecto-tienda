@@ -18,7 +18,7 @@ class CartRepository {
     }
      // Buscar un producto en el carrito por su id
      static async findById(id: number) {
-        const sql = 'SELECT * FROM carrito WHERE id = ?';
+        const sql = 'SELECT * FROM carrito WHERE producto_id = ?';
         const [rows]: any = await db.execute(sql, [id]);
         return rows.length > 0 ? rows[0] : null; // Si el producto existe, retorna el primer resultado, sino retorna null
     }
@@ -26,7 +26,7 @@ class CartRepository {
     // Eliminar un producto del carrito por su id
     
     static async delete(id: number) {
-        const sql = 'DELETE FROM carrito WHERE id = ?';
+        const sql = 'DELETE FROM carrito WHERE producto_id = ?';
         const [result] = await db.execute(sql, [id]);
         return result;
     }
