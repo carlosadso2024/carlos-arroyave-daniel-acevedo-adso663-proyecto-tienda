@@ -16,6 +16,20 @@ class CartRepository {
         const [result] = await db.execute(sql, values);  // Ejecuatamos la inserción
         return result;  // Retornamos el resultado (insertId, affectedRows, etc.)
     }
+     // Buscar un producto en el carrito por su id
+     static async findById(id: number) {
+        const sql = 'SELECT * FROM carrito WHERE id = ?';
+        const [rows]: any = await db.execute(sql, [id]);
+        return rows.length > 0 ? rows[0] : null; // Si el producto existe, retorna el primer resultado, sino retorna null
+    }
+
+    // Eliminar un producto del carrito por su id
+    
+    static async delete(id: number) {
+        const sql = 'DELETE FROM carrito WHERE id = ?';
+        const [result] = await db.execute(sql, [id]);
+        return result;
+    }
 }
 
 export default CartRepository;
