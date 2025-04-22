@@ -24,6 +24,7 @@ class CartRepository {
     }
 
     // Eliminar un producto del carrito por su id
+    
     static async delete(id: number) {
         const sql = 'DELETE FROM carrito WHERE id = ?';
         const [result] = await db.execute(sql, [id]);
